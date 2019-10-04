@@ -1,0 +1,12 @@
+data diropts; 
+	length foption $ 112 charval $ 40; 
+	keep foption charval; 
+	rc = filename("mydir","physical-name");
+	did = dopen("mydir");
+	numopts=doptnum(did);
+	do i = 1 to numopts; 
+		foption = doptname(did,i);
+		charval = dinfo(did,foption); 
+		output;
+	end;
+run; 
