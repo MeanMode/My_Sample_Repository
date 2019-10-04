@@ -1,0 +1,4 @@
+data our_cars; set sashelp.cars; 
+counter + 1; 
+if counter < 2;
+run; 
